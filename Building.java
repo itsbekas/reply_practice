@@ -1,4 +1,6 @@
-public class Building implements Comparable<Building> {
+import java.util.Comparator;
+
+public class Building {
 
     public int x, y, latency, speed;
     public boolean shared = false;
@@ -11,8 +13,14 @@ public class Building implements Comparable<Building> {
         this.speed = speed;
     }
     
-    public int compareTo(Building b) {
-        return b.speed - speed;
+    public static class CmpX implements Comparator<Building> {
+        public int compare(Building a, Building b) {
+            return a.x - b.x;
+        }
     }
-
+    public static class CmpY implements Comparator<Building> {
+        public int compare(Building a, Building b) {
+            return a.y - b.y;
+        }
+    }
 }

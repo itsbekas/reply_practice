@@ -9,3 +9,6 @@ clean:
 
 zip:
 	zip codigo.zip *.java
+
+submit:
+	powershell.exe python submit.py
